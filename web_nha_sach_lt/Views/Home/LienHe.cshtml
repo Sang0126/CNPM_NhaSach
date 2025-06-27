@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Liên hệ";
+}
+
+<div class="container my-5">
+    <h2 class="text-center fw-bold mb-2">Liên hệ chúng tôi</h2>
+    <p class="text-center text-muted mb-5">Chúng tôi luôn sẵn lòng lắng nghe và hỗ trợ bạn.</p>
+
+    <div class="row g-4">
+        <!-- Form liên hệ -->
+        <div class="col-md-6">
+            <div class="bg-white shadow-sm p-4 rounded">
+                <h5 class="fw-bold mb-3">Gửi tin nhắn cho chúng tôi</h5>
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Họ và tên</label>
+                        <input type="text" class="form-control" id="name" placeholder="Nhập họ tên..." />
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Nhập email..." />
+                    </div>
+                    <div class="mb-3">
+                        <label for="subject" class="form-label">Chủ đề</label>
+                        <input type="text" class="form-control" id="subject" placeholder="Chủ đề..." />
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Nội dung tin nhắn</label>
+                        <textarea class="form-control" id="message" rows="4" placeholder="Viết nội dung..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Gửi tin nhắn</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Thông tin liên hệ -->
+        <div class="col-md-6">
+            <div class="bg-white shadow-sm p-4 rounded mb-4">
+                <h5 class="fw-bold mb-3">Thông tin liên hệ</h5>
+                <p><i class="bi bi-geo-alt-fill text-primary me-2"></i><strong>Địa chỉ:</strong> 123 Đường Sách, Phường Văn Học, TP. Tri Thức</p>
+                <p><i class="bi bi-telephone-fill text-success me-2"></i><strong>Điện thoại:</strong> (+84) 123 456 789</p>
+                <p><i class="bi bi-envelope-fill text-purple me-2"></i><strong>Email:</strong> info@bookstore.vn</p>
+                <p><i class="bi bi-clock-fill text-warning me-2"></i><strong>Giờ làm việc:</strong> Thứ 2 - Thứ 6: 8:00 - 18:00<br />Thứ 7 - CN: 9:00 - 17:00</p>
+            </div>
+
+            <!-- Khung bản đồ -->
+            <div class="bg-light p-4 rounded text-center">
+                <p class="text-muted">Bản đồ sẽ được hiển thị tại đây</p>
+            </div>
+        </div>
+    </div>
+</div>

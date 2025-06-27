@@ -1,0 +1,70 @@
+﻿@model List<web_nha_sach_lt.Models.Sach>
+@{
+    ViewData["Title"] = "Trang chủ";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container-fluid mt-4">
+    <div class="row">
+        <!-- DANH SÁCH SÁCH -->
+        <div class="col-lg-9">
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                @foreach (var sach in Model)
+                {
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-0 rounded-4">
+                            <img src="https://via.placeholder.com/300x180?text=Book+Image" class="card-img-top rounded-top-4" alt="Hình sách">
+                            <div class="card-body">
+                                <h6 class="text-secondary">@sach.TheLoai</h6>
+                                <h5 class="card-title fw-bold">@sach.TieuDe</h5>
+                                <p class="text-muted mb-1">@sach.TacGia</p>
+                                <p class="fw-bold text-primary">@sach.Gia.ToString("N0") đ</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-0 d-flex justify-content-between px-3 pb-3">
+                                <a href="#" class="btn btn-primary btn-lg w-50 me-2">
+                                    <i class="bi bi-cart"></i> Mua ngay
+                                </a>
+                                <a asp-controller="Home" asp-action="TrangChiTiet" asp-route-id="@sach.MaSach" class="btn btn-outline-primary btn-sm">
+                                    Chi tiết
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+
+        <!-- GIỎ HÀNG -->
+        <div class="col-lg-3">
+            <div class="card shadow-sm rounded-4">
+                <div class="card-body">
+                    <h5 class="card-title">Giỏ hàng của bạn</h5>
+                    <p class="card-text">Giỏ hàng trống.</p>
+                    <a href="#" class="btn btn-primary w-100">Mua sắm ngay</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-text {
+        margin-bottom: 0.5rem;
+    }
+
+    .card img {
+        object-fit: cover;
+        height: 180px;
+    }
+
+    .btn-lg {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+    }
+</style>
+

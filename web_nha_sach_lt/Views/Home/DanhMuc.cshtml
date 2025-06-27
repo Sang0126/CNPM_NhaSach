@@ -1,0 +1,80 @@
+﻿@model List<web_nha_sach_lt.Models.Sach>
+@{
+    ViewData["Title"] = "Tất cả sách";
+}
+
+<div class="container-fluid mt-4">
+    <div class="row">
+        <!-- Bộ lọc -->
+        <div class="col-lg-3 mb-4">
+            <div class="card shadow-sm border-0">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-filter"></i> Bộ lọc</h5>
+
+                    <div class="mb-3">
+                        <label class="form-label">Sắp xếp theo</label>
+                        <select class="form-select">
+                            <option selected>Phổ biến nhất</option>
+                            <option>Giá tăng dần</option>
+                            <option>Giá giảm dần</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Giá</label>
+                        <select class="form-select">
+                            <option>Tất cả</option>
+                            <option>Dưới 200.000đ</option>
+                            <option>200.000đ - 300.000đ</option>
+                            <option>Trên 300.000đ</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="form-label">Chế độ xem</label><br />
+                        <button class="btn btn-outline-primary btn-sm me-2"><i class="bi bi-grid"></i> Grid</button>
+                        <button class="btn btn-outline-secondary btn-sm"><i class="bi bi-list"></i> List</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Danh sách sách -->
+        <div class="col-lg-9">
+            <h4 class="mb-4 fw-bold">Tất Cả Sách</h4>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                @foreach (var sach in Model)
+                {
+                    <div class="col">
+                        <div class="card h-100 shadow-sm border-0 rounded-4">
+                            <img src="https://via.placeholder.com/300x180?text=Book" class="card-img-top rounded-top-4" alt="Book" />
+                            <div class="card-body">
+                                <h6 class="text-secondary">@sach.TheLoai</h6>
+                                <h5 class="fw-bold">@sach.TieuDe</h5>
+                                <p class="text-muted">@sach.TacGia</p>
+                                <p class="fw-bold text-primary">@sach.Gia.ToString("N0") đ</p>
+                            </div>
+                            <div class="card-footer bg-transparent border-0 d-flex justify-content-between px-3 pb-3">
+                                <a href="#" class="btn btn-primary btn-sm w-50 me-2"><i class="bi bi-cart"></i> Mua ngay</a>
+                                <a href="#" class="btn btn-outline-primary btn-sm w-50">Chi tiết</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+            <!-- PHÂN TRANG -->
+            <div class="mt-4 text-center">
+                <nav>
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled"><a class="page-link">Trước</a></li>
+                        <li class="page-item active"><a class="page-link">1</a></li>
+                        <li class="page-item"><a class="page-link">2</a></li>
+                        <li class="page-item"><a class="page-link">3</a></li>
+                        <li class="page-item"><a class="page-link">Sau</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
