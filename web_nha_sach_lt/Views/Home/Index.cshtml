@@ -22,7 +22,7 @@
                                 <p class="fw-bold text-primary">@sach.Gia.ToString("N0") đ</p>
                             </div>
                             <div class="card-footer bg-transparent border-0 d-flex justify-content-between px-3 pb-3">
-                                <a href="#" class="btn btn-primary btn-lg w-50 me-2">
+                                <a asp-controller="Home" asp-action="AddToCart" asp-route-id="@sach.MaSach" class="btn btn-primary btn-sm">
                                     <i class="bi bi-cart"></i> Mua ngay
                                 </a>
                                 <a asp-controller="Home" asp-action="TrangChiTiet" asp-route-id="@sach.MaSach" class="btn btn-outline-primary btn-sm">
